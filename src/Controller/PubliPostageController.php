@@ -1,10 +1,8 @@
 <?php
 namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-//use Symfony\Bundle\FrameworkBundle\Controller\;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-//use JeroenDesloovere\VCard\VCard;
 use League\Csv\Reader;
 use Symfony\Component\HttpFoundation\Request;
 use Dompdf\Dompdf;
@@ -209,9 +207,9 @@ return $this->render('toto/index.html.twig', [
                 'content2' => $content2,
                 'content3' => $content3,
                 'content4' => $content4,
-                'pied' => $pied,
-                'entet' =>$entet,
-                'logo' => $logo,
+                'pied'  => $pied,
+                'entet' => $entet,
+                'logo'  => $logo,
             ]);*/
             $date =date('d F Y');
             $content = str_replace('[#Prenom#]',   $firstname, $content);
@@ -220,7 +218,6 @@ return $this->render('toto/index.html.twig', [
             $content = str_replace('[#Date#]',   $date, $content);
             $content = str_replace('[#Adress#]',   $adress, $content);
             $content = str_replace('[#Number#]',   $number, $content);
-
             $mpdf = new Mpdf(['mode' => 'utf-8', 'format' => [200, 300]]);
             $mpdf->AddPage("P");
             $mpdf->autoScriptToLang = true;
@@ -341,3 +338,5 @@ $html .= '<p style="display: none">This is hidden text</p>';
 
 
 }
+
+
