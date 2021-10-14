@@ -6,8 +6,6 @@
 parameters:
 
 services:
-    WhiteOctober\TCPDFBundle\Controller\TCPDFController: '@white_october.tcpdf'
-    Qipsius\TCPDFBundle\Controller\TCPDFController: '@qipsius.tcpdf'
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
